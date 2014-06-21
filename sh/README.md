@@ -1,6 +1,6 @@
 # sh
 
-#### シェル変数の記号
+#### シェル変数
 
 | 表記 | 意味 |
 |:-----------:|:------------|
@@ -30,6 +30,8 @@ _ _ _
 
 #### 四則演算
 数値の演算を行う際には`expr`を使用。(例)``変数 = `expr 5 + 3` ``
+区切りに半角スペースが必要、括弧と掛け算はエスケープが必要。
+小数点を扱った計算は`bc`コマンドを使用。
 
 | 演算子 | 意味 |
 |:-----------:|:------------|
@@ -39,6 +41,12 @@ _ _ _
 | \`expr a / b\` | aとbの商 |
 | \`expr a % b\` | aとbの剰余 |
 
+`$((計算式))`でも可能。半角スペースやエスケープは不要。
+```sh
+#!/bin/sh
+echo $((3+5*8))  #=>43
+expr 3 + 5 \* 8  #=>43
+```
 
 _ _ _
 
@@ -88,3 +96,55 @@ _ _ _
 
 
 
+_ _ _
+
+#### パス文字列からファイル名／ディレクトリ名／拡張子を抽出する
+```sh
+#!/bin/sh
+
+test_path="/usr/local/etc/apache/httpd.conf"
+
+string_filename=${test_path##*/}
+string_filename_without_extension=${string_filename%.*}
+string_path=${test_path%/*}
+string_extension=${test_path##*.}
+
+echo ${string_filename}
+echo ${string_filename_without_extension}
+echo ${string_path}
+echo ${string_extension}
+```
+
+```
+# 実行結果
+httpd.conf
+httpd
+/usr/local/etc/apache
+conf
+```
+> 「${test_path##*/}」は「*/」で表される文字列の最長一致接頭部分の除去を、「${test_path%/*}」は「/*」で表される最短一致接尾部分の除去をするからです。
+
+> 元の文字列「${test_path}」が「/usr/local/etc/apache/httpd.conf」ですので、「${test_path##*/}」では「*/」にマッチする最長の接頭部分「/usr/local/etc/apache/」が削除され、結果として「httpd.conf」が残ります。
+また、「${test_path%/*}」は「/*」にマッチする最短の接尾部分「/httpd.conf」が削除され、結果として「/usr/local/etc/apache」が残ります。
+
+> 引用： [【FreeBSD】シェルスクリプトでパス文字列からファイル名／ディレクトリ名／拡張子を抽出する](http://www.kishiro.com/FreeBSD/get_filename_in_shellscript.html)
+
+
+
+
+_ _ _
+
+#### 処理を一行で実行するときの接続子
+```sh
+# ; の前後コマンドに何の関連性はなし
+$ echo abcd ; echo えーびーしぃでぇ]
+
+# && は、直前に実行された処理の終了コード値が[正常終了:0]なら次のコマンドを実行
+$ echo 新規書き込み > a.txt && echo 書き込み成功
+bash: a.txt: Permission denied
+
+# || は、上記以外の時に実行
+$ echo 新規書き込み > a.txt || echo 書き込み失敗
+bash: a.txt: Permission denied
+書き込み失敗
+```
