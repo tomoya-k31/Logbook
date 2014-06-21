@@ -12,6 +12,7 @@
    * [Nginx](env/nginx.md)
    * [Tomcat](env/tomcat.md)
    * [Jetty](env/jetty.md)
-* [Shell](shell/README.md)
+* [sh](sh/README.md)
+   * [排他制御](sh/exclusive-control.md)
 * [Java](java/README.md)
 
