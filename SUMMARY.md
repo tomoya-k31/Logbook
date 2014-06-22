@@ -1,6 +1,7 @@
 # Summary
 
 * [開発環境](env/README.md)
+   * [Mac](env/mac.md)
    * [zsh](env/zsh.md)
    * [vim](env/vim.md)
    * [tmux](env/tmux.md)
