@@ -31,13 +31,15 @@ fatal: Not possible to fast-forward, aborting.
 ```
 
 
-###### 念のためバックアップ
+* 念のためバックアップ
+
 ```sh
 $ mv ~/.cocoapods ~/cocoapods
 $ mv ~/Library/Caches/CocoaPods ~/CocoaPodsCaches
 ```
 
-###### 再度実行
+* 再度実行
+
 ```sh
 $ pod setup
 
@@ -47,5 +49,5 @@ $ ls ~/Library/Caches/CocoaPods
 
 # バックアップを削除
 $ rm -rf ~/cocoapods
-$ $ rm -rf ~/CocoaPodsCaches
+$ rm -rf ~/CocoaPodsCaches
 ```
