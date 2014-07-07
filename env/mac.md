@@ -56,6 +56,7 @@ $ brew install reattach-to-user-namespace
 $ brew install jq
 $ brew install curl
 $ brew install wget
+$ brew install tree
 $ brew install jsonpp
 $ pip install httpie
 
