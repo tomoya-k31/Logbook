@@ -66,7 +66,22 @@ $ gem install tmuxinator
 ```
 
 
+_ _ _
 
+##### ログインシェルを変更
+```sh
+## 現在のシェルを確認する
+$ dscl localhost -read Local/Default/Users/$USER UserShell
+UserShell: /bin/bash
+```
+```sh
+$ sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
+
+## 確認
+$ cat /etc/shells
+$ chsh -s /usr/local/bin/zsh
+```
+> [Homebrew で zsh を導入する](http://www.d-wood.com/blog/2014/03/14_5816.html)
 
 _ _ _
 
