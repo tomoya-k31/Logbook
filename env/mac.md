@@ -63,6 +63,9 @@ $ brew install zsh
 $ brew install zsh-completions
 $ brew install tmux
 $ gem install tmuxinator
+
+## MacでGNUのコマンドを使う
+$ brew install coreutils
 ```
 
 
