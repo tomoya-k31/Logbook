@@ -64,3 +64,26 @@ $ brew install zsh-completions
 $ brew install tmux
 $ gem install tmuxinator
 ```
+
+
+
+
+_ _ _
+
+##### Install Homebrew-cask
+```sh
+$ brew tap caskroom/cask
+$ brew install brew-cask
+
+# バグったら
+$ brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
+```
+> [caskroom/homebrew-cask](https://github.com/caskroom/homebrew-cask)
+
+
+##### Install LaunchRocket
+```sh
+$ brew cask install launchrocket
+```
+> [jimbojsb/launchrocket](https://github.com/jimbojsb/launchrocket)
+
