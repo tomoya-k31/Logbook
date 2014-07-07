@@ -109,3 +109,12 @@ $ brew cask install launchrocket
 ```
 > [jimbojsb/launchrocket](https://github.com/jimbojsb/launchrocket)
 
+_ _ _
+
+##### Install Tomcat
+```sh
+$ mkdir -p /usr/local/src; cd /usr/local/src
+$ wget http://ftp.meisei-u.ac.jp/mirror/apache/dist/tomcat/tomcat-7/v7.0.54/bin/apache-tomcat-7.0.54.tar.gz
+$ tar zxvf apache-tomcat-7.0.54.tar.gz
+$ mv apache-tomcat-7.0.54 /usr/local/tomcat7052
+```
