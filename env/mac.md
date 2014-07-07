@@ -60,6 +60,9 @@ $ brew install tree
 $ brew install jsonpp
 $ pip install httpie
 
+## Python3だとエラー
+$ pip install logcat-color
+
 $ brew install zsh
 $ brew install zsh-completions
 $ brew install tmux
