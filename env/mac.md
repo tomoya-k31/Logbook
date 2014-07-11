@@ -69,6 +69,9 @@ $ brew install tmux
 $ gem install tmuxinator
 
 ## MacでGNUのコマンドを使う
+$ brew install xz
+$ brew install binutils
+$ brew install findutils
 $ brew install coreutils
 ```
 
@@ -118,3 +121,19 @@ $ wget http://ftp.meisei-u.ac.jp/mirror/apache/dist/tomcat/tomcat-7/v7.0.54/bin/
 $ tar zxvf apache-tomcat-7.0.54.tar.gz
 $ mv apache-tomcat-7.0.54 /usr/local/tomcat7052
 ```
+
+##### iTerm2設定
+```sh
+# color
+$ cd $HOME/.dotfiles
+$ git clone https://github.com/seebi/dircolors-solarized.git
+$ ln -s ~/.dotfiles/dircolors-solarized/dircolors.256dark ~/.dircolors
+
+# vim
+$ mkdir -p $HOME/.vim/bundle; cd $HOME/.vim/bundle
+$ git clone git://github.com/Shougo/neobundle.vim.git
+$ vim +":NeoBundleInstall" +:q
+```
+
+iterm用のカラーセットをダウンロード、import後設定
+[https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
