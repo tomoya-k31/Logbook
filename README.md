@@ -19,6 +19,7 @@
    * [排他制御](sh/exclusive-control.md)
 * [Java](java/README.md)
    * [Gradle](java/gradle.md)
+   * [Design Pattern](java/designpattern.md)
 * [iOS](ios/README.md)
 
 
